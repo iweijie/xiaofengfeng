@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //  变量声明方式  var  let  const
+        // ------------------变量提升---------------------------------
+        // -------------  1 --------------------
+        // var
+        // console.log(varTest)  // undefined
+        // var varTest = "123"
+        
+        // -------------  2 --------------------
+        // let const
+        // console.log(letTest)  // 报错
+        // console.log(constTest)  // 报错
+        // let letTest = "123"
+        // const constTest = "123"
+
+        // -------------  3 --------------------
+        // 块级作用域
+        // if(true){
+        //     var a = 0;
+        //     let b = 0;
+        //     const c = 0;
+        // }
+        // console.log(a)  // 0
+        // console.log(b)  // 报错
+        // console.log(c)  // 报错
+
+        // ------ 同一块级作用域内 let 和 const 不能重复声明 会报错 --------
+
+        // let a = 1;
+        // let a = 2;
+        // const b = 1;
+        // const b = 2;
+        // ------------------变量提升---------------------------------
+
+
+        
+        // ------------------ 变量赋值 ---------------------------------
+        // var let 可以随意修改值
+        // const 如初始赋值为 简单类型 ， 值不能修改 ； 如为 复杂类型 ， 地址不能修改，可以增加，修改，删除 属性值；
+        // var a = 1;
+        // let b = 2;
+        // const c = 3;
+        // const d = {a,b,c};
+    
+        // -------------  1 --------------------
+        // a = 4 
+        // b = 5
+        // c = 6  //报错
+        // d = {test:1}  // 报错
+        // console.log(a)
+        // console.log(b)
+        // console.log(c)
+        // console.log(d)
+
+        // -------------  2 --------------------
+        // d.test = "test"
+        // d.c = "c"
+        // delete d.a
+        // console.log(d)
+
+
+        //  小知识点
+        //  在 try catch 中  catch 块 里面 var 声明的变量外部是无法访问的
+
+        try {
+        }catch(err){
+            var varCatch = 1;
+        }
+        console.log(varCatch)
+
+
+        // 严格模式下("use strict";) 未声明的变量直接使用时会报错滴
+
+        function test(){
+            "use strict";
+            b = 1
+        }
+        test()
+    </script>
+</body>
+</html>

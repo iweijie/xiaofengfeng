@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        //  String，Number ，Boolean，undefined，Null，Symbol
+        //  Array，Object，Function
+        var num = 1;
+        var str = "111.11";
+        var bool = true;
+        var _undefined = void 0;
+        var _NaN = 1 + _undefined;
+        var obj = {};
+        var fn = () => { console.log("fn") };
+        var arr = [];
+
+        // Number -->  String
+        console.log(num.toString())
+        console.log(String(num))
+        console.log(num + "")
+
+        // Number -->  Boolean
+        //  除了 0 转为false ； 其余全部为true
+        console.log(Boolean(num))
+        console.log(!!num)
+
+        // String -->  Boolean
+        // 除了 "" 转为false ；  其余全为 true
+        console.log(Boolean(str))
+        console.log(!!str)
+
+        // --> Boolean
+        // 除了 undefiend null NaN "" 0 会转为 false
+        // 其余 全部转为 true
+
+
+        // 用于区分 +0 和 -0   , 了解就好，没啥实际意义
+        // function isNegativeZero(num) {
+        //     return num === 0 && (1 / num < 0);
+        // }
+        // console.log(isNegativeZero(0),"-0");
+
+
+
+        // String -->  Number
+        // parseFloat 会保留小数，会尝试从前往后解析，直到遇到非数字停止,若未解析成功返回NaN
+        // parseInt 不会保留小数，会尝试从前往后解析，直到遇到非数字停止,若未解析成功返回NaN
+        // Number 会尝试将字符串转为数字，若含有非数字，返回NaN
+
+        var str1 = "111";
+        var str2 = "111.11";
+        var str3 = "111.1a1";
+        var str4 = "111.11.1";
+        var str5 = "a111";
+        console.log(parseFloat(str))
+        console.log(parseInt(str))
+        console.log(Number(str))
+        console.log(str - 0)
+
+        // Boolean -->  Number
+        // false 转为 0 ； true 转为 1； 
+        console.log(Number(true))
+
+        // Boolean -->  String
+        // false 转为 "false" ； true 转为 "true"； 
+        console.log(String(true))
+
+        // 简单类型 -->  Object
+        console.log(new String(""))
+        console.log(new Number(1))
+        console.log(new Boolean(true))
+
+        // Object -->  String
+        // 对象在转换基本类型时，首先会调用 valueOf 然后调用 toString。并且这两个方法你是可以重写的
+
+        console.log(obj.toString())
+        console.log(fn.toString())
+            // ---- arr--- 
+            var arr1 = [0,1,2]
+            var arr2 = [{1:1},{2:2}]
+            var arr3 = [1,{2:2}]
+            console.log(arr.toString())
+            console.log(arr1.toString()) 
+            console.log(arr2.toString())
+            console.log(arr3.toString())
+
+    </script>
+</body>
+
+</html>

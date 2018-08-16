@@ -1,0 +1,31 @@
+ <!DOCTYPE html>
+ <html lang="en">
+ <head>
+     <meta charset="UTF-8">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+     <title>Document</title>
+ </head>
+ <body>
+    <script>
+        //---------- 函数声明 -------------
+        function fn1(){}
+        var fn2 = function(){}
+        var fn3 = ()=>{}
+          
+        //---------- 函数参数说明 -------------
+        
+        var test = function(a,b){
+            a = 2;
+            b.a = 2
+
+            console.log("函数内部",a)
+            console.log("函数内部",b)
+        }
+        var a = 1,b = {a:1}
+        test(a,b)
+        console.log("函数外部",a)
+        console.log("函数外部",b)
+    </script>
+ </body>
+ </html>

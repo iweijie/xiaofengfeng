@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 这边只举例基本使用 
+        // 具体可以查看 阮一峰大大的ES6  http://es6.ruanyifeng.com/
+
+        // 对象解构赋值
+        // var {a,b,c} = {a:1,b:2,c:3,d:4}
+        // console.log(a) // 1
+        // console.log(b) // 2
+        // console.log(c) // 3
+
+        
+        // var {a,b,c,d} = {a:1,b:2,c:3}
+        // console.log(a) // 1
+        // console.log(b) // 2
+        // console.log(c) // 3
+        // console.log(d) // undefined
+
+        
+        // 数组解构赋值
+        // var [a,b,c] = [1,2,3,4]
+        // console.log(a) // 1
+        // console.log(b) // 2
+        // console.log(c) // 3
+
+        
+        // var [a,b,c,d] = [1,2,3]
+        // console.log(a) // 1
+        // console.log(b) // 2
+        // console.log(c) // 3
+        // console.log(d) // undefined
+
+
+        //  ----- - es6 扩展运算符 三个点（...）--------
+        //  ---------------- 数组 --------------
+        // var arr = [1,2,3,4,5]
+        // var newArr1 = [...arr,6]
+        // var newArr2 = [0, ...arr ,6]
+        // console.log(newArr1) // [1, 2, 3, 4, 5, 6]
+        // console.log(newArr2) // [0,1, 2, 3, 4, 5, 6]
+
+        
+        //  [...arr,6]  可以大致理解为 将数组中的值一个个的追加在当前位置后面
+        //  个人猜想 ， 仅供参考理解
+        // var arr = [1,2,3]
+        // var arr1 = [1,"占位",6]
+        // var index = arr1.indexOf("占位");
+        // arr1.splice(index,1)
+        // var flag = 0 ;
+        // while(flag <  arr.length){
+        //     arr1.splice(index,0,arr[flag]);
+        //     index ++ ;
+        //     flag ++ ;
+        // }
+        // console.log(arr1)
+        
+
+
+        //  ---------------- 对象 --------------
+        // var obj = {
+        //     a:1,
+        //     b:2,
+        //     c:3
+        // }
+        // var newObje = {
+        //     ...obj,
+        //     c : 4
+        // }
+        // console.log(newObje)
+
+        // 扩展运算符运用于数组
+        // ------浅克隆
+        // var a = [{1:1,2:2}]
+        // var b = [...a]
+        // console.log(a[0] === b[0]) // true
+        
+        // ------ 合并数组
+        var a = [1,2],b = [3,4]
+        var c = [...a,...b]
+        
+        // .............  感觉还有好多用处 ， 容我想想
+    </script>
+</body>
+</html>
